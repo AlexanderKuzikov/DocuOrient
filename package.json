@@ -1,0 +1,50 @@
+{
+  "name": "docu-orient",
+  "version": "0.1.0",
+  "description": "Orientation detection and rotation for deskewed document images.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "docu-orient": "./dist/cli/orient.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "fixtures": "tsx scripts/generate-fixtures.ts",
+    "benchmark": "tsx bench/benchmark.ts"
+  },
+  "keywords": [
+    "document",
+    "orientation",
+    "deskew",
+    "image",
+    "sharp",
+    "ocr-pipeline"
+  ],
+  "author": "Alexander Kuzikov",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}
