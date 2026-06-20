@@ -10,6 +10,7 @@ const sharp = (sharpModule as unknown as { default: SharpFactory }).default;
 
 import {
   InvalidInputError,
+  InvalidOptionsError,
   UnsupportedFormatError,
   UnsupportedImageError,
   orient
@@ -146,6 +147,10 @@ describe('orient()', () => {
 
   it('throws InvalidInputError for non-buffer input', async () => {
     await expect(orient('not a buffer' as unknown as Buffer)).rejects.toThrow(InvalidInputError);
+  });
+
+  it('throws InvalidOptionsError for invalid options', async () => {
+    await expect(orient(Buffer.from('not a png'), { minConfidence: 2 })).rejects.toThrow(InvalidOptionsError);
   });
 
   it('throws UnsupportedImageError for truncated PNG input', async () => {

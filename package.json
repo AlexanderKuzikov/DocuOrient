@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "description": "Orientation detection and rotation for deskewed document images.",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
     }
   },
   "bin": {
@@ -18,12 +18,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc",
     "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test && npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "fixtures": "tsx scripts/generate-fixtures.ts",
-    "benchmark": "tsx bench/benchmark.ts"
+    "benchmark": "tsx bench/benchmark.ts",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\""
   },
   "keywords": [
     "document",

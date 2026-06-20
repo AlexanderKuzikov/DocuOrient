@@ -15,6 +15,13 @@ export class InvalidInputError extends DocuOrientError {
   }
 }
 
+export class InvalidOptionsError extends DocuOrientError {
+  constructor(message = 'Invalid orientation options.') {
+    super('INVALID_OPTIONS', message);
+    this.name = 'InvalidOptionsError';
+  }
+}
+
 export class UnsupportedFormatError extends DocuOrientError {
   constructor(message = 'Input must be a PNG image.') {
     super('UNSUPPORTED_FORMAT', message);

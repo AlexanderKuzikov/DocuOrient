@@ -10,11 +10,11 @@
     "outDir": "dist",
     "rootDir": ".",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "cli/**/*.ts", "bench/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "vitest.config.ts"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["src/**/*.ts", "cli/**/*.ts"],
+  "exclude": ["dist", "node_modules", "test", "scripts", "bench", "vitest.config.ts"]
 }
